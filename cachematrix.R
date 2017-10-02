@@ -3,8 +3,43 @@
 ## WEEK 3
 
 
+## makeCacheMatrix creates a list containing four functions:
+## 1. Set = Set the value of the matrix
+## 2. Get = Get the value of the matrix
+## 3. SetInverse = Set the value of inverse of the matrix
+## 4. GetInverse = Get the value of inverse of the matrix
 makeCacheMatrix <- function(x = matrix()) {
-
+    inv <- NULL
+    
+    ##All those functions works like methods in other languages.
+    
+    ##SET
+    Set <- function(y) {
+        x <<- y
+        inv <<- NULL
+    }
+    
+    ##GET
+    Get <- function(){
+        x
+    }
+    
+    ##SET INVERSE
+    SetInverse <- function(inverse){
+        inv <<- inverse
+    }
+    
+    ##GET INVERSE
+    GetInverse <- function(){
+        inv
+    }
+    
+    list(
+        Set=Set,
+        Get=Get,
+        SetInverse=SetInverse,
+        GetInverse=GetInverse
+        )
 }
 
 ## The following function returns the inverse of the matrix.
